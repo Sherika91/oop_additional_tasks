@@ -1,37 +1,38 @@
 """
-Создай класс Album у которого есть поля
+Create a class called Album with the following fields:
 
-- Исполнитель (artist) - строка
-- Название (title) - строка
-- Треки (tracks) - это **список**
+Artist (artist) - string
+Title (title) - string
+Tracks (tracks) - lists
+Create two instances, album_1 and album_2:
 
-**Создай два экземпляра album_1 и album_2**
+Artist: Queen
 
-Исполнитель: Queen
+Title: Killer Queen
 
-Название: Killer Queen
+Tracks: Brighton Rock, Killer Queen, Tenement Funster
 
-Треки: Brighton rock, Killer Queen, Tenement Funster
+Artist: Metallica
 
-Исполнитель: Metallica
+Title: Black Album
 
-Название: Black Album
-
-Треки: Enter Sandman, Sad But True, Holier Than Thou
+Tracks: Enter Sandman, Sad But True, Holier Than Thou
 """
 
 
-class ...:
+class Album:
 
-    def ...:
-    ...
-
-
-album_1 = Album(...)
-
-album_2 = ...
+    def __init__(self, artist, title, tracks):
+        self.artist = artist
+        self.title = title
+        self.tracks = tracks
 
 
-# код для проверки 
+# Create two instances of the Album class
+album_1 = Album("Queen", "Killer Queen", ['Brighton rock', 'Killer Queen', 'Tenement Funster'])
+
+album_2 = Album("Metallica", "Black Album", ['Enter Sandman', 'Sad But True', 'Holier Than Thou'])
+
+# Print the artist, title, and number of tracks for each album
 print(album_1.artist, album_1.title, len(album_1.tracks), "треков")  # Queen Killer Queen 3 треков
 print(album_2.artist, album_2.title, len(album_2.tracks), "треков")  # Metallica Black Album 3 треков

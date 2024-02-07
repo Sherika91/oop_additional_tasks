@@ -1,36 +1,39 @@
 """
-Создай класс `Number` c полем `value` (указывается при инициализации)
+Create a class called Number with a field value (specified during initialization).
 
-Создай экземпляр, например `x = Number(7)`
+Create an instance, for example, x = Number(7).
 
-Добавь методы:
+Add methods:
 
-`.get()` возвращает текущее value
+.get() returns the current value.
 
-`.add(<значение>)` добавляет указанное число к value
+.add(<value>) adds the specified number to the value.
 
-`.substract(<значение>)` вычитает указанное число из value
+.subtract(<value>) subtracts the specified number from the value.
 """
+
 
 class Number:
 
     def __init__(self, value):
-        ...
+        self.value = value
 
-    def ...(self):
-        ...
+    def get(self):
+        """ Returns the current value. """
+        return self.value
 
-    def ...:
-        ...
+    def add(self, number):
+        """ Adds the specified number to the value."""
+        self.value += number
 
-    def ...:
-        ...
+    def subtract(self, number):
+        """ Subtracts the specified number from the value. """
+        self.value -= number
 
 
-# код для проверки 
 n = Number(7)
 print(n.get())  # 7
 n.add(3)
 print(n.get())  # 10
-n.substract(5)
+n.subtract(5)
 print(n.get())  # 5
