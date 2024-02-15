@@ -1,19 +1,28 @@
 """
-Напишите класс Student, представляющий студента, имеющий следующие атрибуты:
 
-- __slots__ = ('name', 'age', 'grades'): список атрибутов, доступных объекту.
+Write a class called Student, representing a student, with the following attributes:
+slots = ('name', 'age', 'grades'): list of attributes available to the object.
 
-Напишите класс Course, представляющий курс, имеющий следующие атрибуты:
-
-- __slots__ = ('name', 'students'): список атрибутов, доступных объекту.
+Write a class called Course, representing a course, with the following attributes:
+slots = ('name', 'students'): list of attributes available to the object.
 """
 
 
 class Student:
-    pass
+    __slots__ = ('name', 'age', 'grades')
+
+    def __init__(self):
+        pass
 
 
-# код для проверки 
+class Course:
+    __slots__ = ('name', 'students')
+
+    def __init__(self):
+        pass
+
+
+# код для проверки
 student1 = Student()
 student1.name = "John"
 student1.age = 20
