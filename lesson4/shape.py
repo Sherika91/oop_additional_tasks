@@ -1,26 +1,46 @@
 """
-Напишите класс Shape, представляющий геометрическую фигуру, имеющий следующие методы:
+Write a class called Shape, representing a geometric shape, with the following methods:
+- __init__(self, name): constructor that accepts the name of the geometric shape;
+- area(self): method that computes the area of the geometric shape.
 
-- __init__(self, name): конструктор, принимающий имя геометрической фигуры;
-- area(self): метод, который вычисляет площадь геометрической фигуры.
+Write a class called Rectangle, inheriting from the Shape class, representing a rectangle, with the following methods:
+- __init__(self, name, width, height): constructor that accepts the name of the rectangle, its width, and height;
+- area(self): method that computes the area of the rectangle.
 
-Напишите класс Rectangle, наследующийся от класса Shape, представляющий прямоугольник, имеющий следующие методы:
-
-- __init__(self, name, width, height): конструктор, принимающий имя прямоугольника, ширину и высоту;
-- area(self): метод, который вычисляет площадь прямоугольника.
-
-Напишите класс Triangle, наследующийся от класса Shape, представляющий треугольник, имеющий следующие методы:
-
-- __init__(self, name, base, height): конструктор, принимающий имя треугольника, основание и высоту;
-- area(self): метод, который вычисляет площадь треугольника.
+Write a class called Triangle, inheriting from the Shape class, representing a triangle, with the following methods:
+- __init__(self, name, base, height): constructor that accepts the name of the triangle, its base, and height;
+- area(self): method that computes the area of the triangle.
 """
 
 
 class Shape:
-    pass
+    def __init__(self, name):
+        self.name = name
+
+    def area(self):
+        return 0
 
 
-# код для проверки 
+class Rectangle(Shape):
+    def __init__(self, name, width, height):
+        super().__init__(name)
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.height * self.width
+
+
+class Triangle(Shape):
+    def __init__(self, name, base, height):
+        super().__init__(name)
+        self.base = base
+        self.height = height
+
+    def area(self):
+        return int(1 / 2 * (self.base * self.height))
+
+
 shape = Shape("Shape")
 print(shape.area())  # 0
 

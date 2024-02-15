@@ -1,27 +1,43 @@
 """
-Напишите класс Person, представляющий человека, имеющий следующие методы:
+Write a class called Person, representing a person, with the following methods:
+- __init__(self, name, age): constructor that takes the person's name and age;
+- get_name(self): method that returns the person's name;
+- get_age(self): method that returns the person's age.
 
-- __init__(self, name, age): конструктор, принимающий имя человека и его возраст;
-- get_name(self): метод, который возвращает имя человека;
-- get_age(self): метод, который возвращает возраст человека.
-
-Напишите класс Student, наследующийся от класса Person, представляющий студента, имеющий следующие методы:
-
-- __init__(self, name, age, major): конструктор, принимающий имя студента, его возраст и основной предмет
-- get_major(self): метод, который возвращает основной предмет студента.
+Write a class called Student, inheriting from the Person's class, representing a student, with the following methods:
+- __init__(self, name, age, major): constructor that takes the student's name, age, and major;
+- get_major(self): method that returns the student's major.
 """
 
 
 class Person:
-    pass
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def get_name(self):
+        return self.name
+
+    def get_age(self):
+        return self.age
 
 
-# код для проверки 
-person = Person("Иван", 25)
-print(person.get_name())  # Иван
+class Student(Person):
+    def __init__(self, name, age, major):
+        super().__init__(name, age)
+        self.major = major
+
+    def get_major(self):
+        return self.major
+
+
+# код для проверки
+person = Person("Ivan", 25)
+print(person.get_name())  # Ivan
 print(person.get_age())  # 25
+print()
 
-student = Student("Мария", 20, "математика")
-print(student.get_name())  # Мария
+student = Student("Maria", 20, "Mathematics")
+print(student.get_name())  # Maria
 print(student.get_age())  # 20
-print(student.get_major())  # математика
+print(student.get_major())  # Mathematics
