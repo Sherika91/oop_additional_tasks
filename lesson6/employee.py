@@ -1,29 +1,44 @@
 """
-Напишите класс Person, представляющий человека, имеющий следующие атрибуты:
+Write a class called Person, representing a person, with the following attributes:
 
-- имя
-- возраст
-- зарплата
+- name
+- age
+- salary
 
-Напишите класс Employee, у которого конструктор проверяет, что возраст не меньше 18 и не больше 127 лет.
-В случае, если возраст не укладывается в заданные рамки, вызвать исключение ValueError и прервать выполнение программы.
-Также в конструкторе необходимо проверять уровень зарплаты, который должен быть не меньше 16242. Вызывать ValueError
-исключение.
+Write a class called Employee,
+ in which the constructor checks that the age is not less than 18 and not greater than 127 years old.
 
-Вызванные исключения должны пояснять в чем именно произошла ошибка.
+If the age does not fit within the specified limits, raise a ValueError exception and terminate the program.
+Also, in the constructor, it is necessary to check the salary level,
+ which should not be less than 16242. Raise a ValueError
+exception if this condition is violated.
+
+The raised exceptions should explain specifically what error occurred.
 """
 
 
-class Employee:
-    pass
+class Person:
+    def __init__(self, name, age, salary):
+        self.name = name
+        self.age = age
+        self.salary = salary
+
+
+class Employee(Person):
+    def __init__(self, name, age, salary):
+        super().__init__(name, age, salary)
+        if salary < 16242:
+            raise ValueError("Salary cannot be less than 16242")
+        if not 18 <= age <= 127:
+            raise Exception("Age must be between 18 and 127")
 
 
 # код для проверки
-employee = Employee('John', 30, 5000)
-# raises ValueError('Оплата труда не может быть меньше 16242')
+# employee = Employee('John', 30, 5000)
+# raises ValueError('Salary cannot be less than 16242')
 
 employee = Employee("Jane", 17, 50000)
-# raises ValueError('Возраст должен быть не меньше 18 и не больше 127')
+# raises ValueError('Age must be between 18 and 127')
 
 employee = Employee("Kate", 175, 50000)
-# raises ValueError('Возраст должен быть не меньше 18 и не больше 127')
+# raises ValueError('Age must be between 18 and 127')

@@ -1,20 +1,26 @@
 """
-Напишите класс Car, представляющий машину, имеющий следующие свойства:
+Write a class called Car, representing a car, with the following properties:
 
-- бренд
-- модель
-- год выпуска
+- brand
+- model
+- year of manufacture
 
-Важно в конструкторе обрабатывать исключения, если год больше текущего
+It is important to handle exceptions in the constructor if the year is greater than the current year.
 """
+from datetime import datetime
 
 
 class Car:
-    pass
+    def __init__(self, brand, model, year_manufactured):
+        self.brand = brand
+        self.model = model
+        self.year_manufactured = year_manufactured
+        if year_manufactured > datetime.now().year:
+            raise Exception('This car has not been released yet')
 
 
-# код для проверки
+# Code for testing
 car = Car('Toyota', 'Corolla', 2022)
 
 car = Car('Toyota', 'Corolla', 3000)
-# raises Exception('Эта машина еще не была выпущена')
+# raises Exception ('This car has not been released yet')
